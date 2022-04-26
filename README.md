@@ -4,15 +4,16 @@ To run the Marauders Music Listening Analysis application, you simply need to ru
 
 ## Windows/Mac
 
-1) OpenJDK 18: https://jdk.java.net/18/
+### To run the .jar file, you will need to install:
+1) OpenJDK 18: https://www.oracle.com/java/technologies/javase/jdk18-archive-downloads.html
 2) Install the PostGreSQL Driver: https://jdbc.postgresql.org/download.html
-3) Run the .jar
+### Run the .jar file.
 
 ## Linux
 
-1) To run the .jar file, you will need to install:
-a) openjdk-18-jdk
-b) libpostgresql-jdbc-java
+### To run the .jar file, you will need to install:
+1) openjdk-18-jdk
+2) libpostgresql-jdbc-java
 
-2) Run the .jar file: 
+### Run the .jar file.
 java -jar Marauders_MLA.jar
