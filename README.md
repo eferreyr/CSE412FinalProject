@@ -1,6 +1,6 @@
 # CSE412FinalProject
 
-To run the Marauders Music Listening Analysis application, you simply need to run Marauders_MLA_2.jar. However, it requires some dependencies.
+To run the Marauders Music Listening Analysis application, you simply need to run Marauders_MLA3.jar. However, it requires some dependencies.
 
 ## Windows
 
@@ -10,7 +10,7 @@ To run the Marauders Music Listening Analysis application, you simply need to ru
 #### Step 2.) Select the .jar, then select "Choose another app" and then select it to open with Java Platform SE binary.
 #### Step 3.) Open Command Prompt and navigate to the location of the .jar file.
 #### Step 4.) Then, run the file with the command:
-java -jar Marauders_MLA_2.jar
+java -jar Marauders_MLA3.jar
 
 ## Linux
 
@@ -19,4 +19,4 @@ java -jar Marauders_MLA_2.jar
 2) libpostgresql-jdbc-java
 
 #### Step 2.) Run the .jar file with the command:
-java -jar Marauders_MLA_2.jar
+java -jar Marauders_MLA3.jar
