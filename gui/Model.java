@@ -180,14 +180,14 @@ public class Model {
         return rs;
     }
 
-    // most_listened_artist_for_everyone: List of top 30 most listened artists; outputs artistname, total playcount
+    // most_listened_artist_for_everyone: List of top 15 most listened artists; outputs artistname, total playcount
     public ResultSet most_listened_artist_for_everyone()
     {
         ResultSet rs = null;
         try
         {
             rs = stmt.executeQuery( 
-                "SELECT artists.artistname as ArtistName, SUM(usersong.number_of_times_played) as TotalPlayCount FROM usersong, artists, songs WHERE Songs.songid = usersong.songid and artists.artistid = songs.artistid GROUP BY ArtistName ORDER BY TotalPlayCount desc LIMIT 30;" );
+                "SELECT artists.artistname as ArtistName, SUM(usersong.number_of_times_played) as TotalPlayCount FROM usersong, artists, songs WHERE Songs.songid = usersong.songid and artists.artistid = songs.artistid GROUP BY ArtistName ORDER BY TotalPlayCount desc LIMIT 15;" );
 
         }
         catch (Exception e) {
@@ -198,7 +198,7 @@ public class Model {
         return rs;
     }
 
-    // most_listened_album_for_everyone: List of top 30 most listened albums; outputs albumname, artistname, total playcount
+    // most_listened_album_for_everyone: List of top 15 most listened albums; outputs albumname, artistname, total playcount
     public ResultSet most_listened_album_for_everyone()
     {
         ResultSet rs = null;
@@ -206,7 +206,7 @@ public class Model {
         {
 
             rs = stmt.executeQuery(
-                "SELECT albums.albumname as AlbumName, artists.artistname as ArtistName, SUM(usersong.number_of_times_played) as TotalPlayCount FROM usersong, albums, artists, songs WHERE Songs.songid = usersong.songid and albums.albumid = songs.albumid and artists.artistid = albums.artistid GROUP BY AlbumName, ArtistName ORDER BY TotalPlayCount desc LIMIT 30;" );
+                "SELECT albums.albumname as AlbumName, artists.artistname as ArtistName, SUM(usersong.number_of_times_played) as TotalPlayCount FROM usersong, albums, artists, songs WHERE Songs.songid = usersong.songid and albums.albumid = songs.albumid and artists.artistid = albums.artistid GROUP BY AlbumName, ArtistName ORDER BY TotalPlayCount desc LIMIT 15;" );
 
         }
         catch (Exception e) {
@@ -217,14 +217,14 @@ public class Model {
         return rs;
     }
 
-    // most_listened_song_for_everyone: List of top 30 most listened songs; outputs songname, artistname, total playcount
+    // most_listened_song_for_everyone: List of top 15 most listened songs; outputs songname, artistname, total playcount
     public ResultSet most_listened_song_for_everyone()
     {
         ResultSet rs = null;
         try
         {
             rs = stmt.executeQuery(
-                "SELECT songs.songname as SongName, artists.artistname as ArtistName, SUM(usersong.number_of_times_played) as TotalPlayCount FROM usersong, songs, artists WHERE Songs.songid = usersong.songid and artists.artistid = songs.artistid GROUP BY SongName, ArtistName ORDER BY TotalPlayCount desc LIMIT 30;");
+                "SELECT songs.songname as SongName, artists.artistname as ArtistName, SUM(usersong.number_of_times_played) as TotalPlayCount FROM usersong, songs, artists WHERE Songs.songid = usersong.songid and artists.artistid = songs.artistid GROUP BY SongName, ArtistName ORDER BY TotalPlayCount desc LIMIT 15;");
 
         }
         catch (Exception e) {
@@ -235,14 +235,14 @@ public class Model {
         return rs;
     }
 
-    // greatest_amount_of_listeners_artist: List of top 30 most listened songs; outputs artistname, number of listeners
+    // greatest_amount_of_listeners_artist: List of top 15 most listened songs; outputs artistname, number of listeners
     public ResultSet greatest_amount_of_listeners_artist()
     {
         ResultSet rs = null;
         try
         {
             rs = stmt.executeQuery( 
-                "SELECT artists.artistname as ArtistName, COUNT(DISTINCT usersong.userid) as NumberofListeners FROM usersong, artists, songs WHERE Songs.songid = usersong.songid and artists.artistid = songs.artistid GROUP BY ArtistName ORDER BY NumberofListeners desc LIMIT 30;");
+                "SELECT artists.artistname as ArtistName, COUNT(DISTINCT usersong.userid) as NumberofListeners FROM usersong, artists, songs WHERE Songs.songid = usersong.songid and artists.artistid = songs.artistid GROUP BY ArtistName ORDER BY NumberofListeners desc LIMIT 15;");
 
         }
         catch (Exception e) {
@@ -253,14 +253,14 @@ public class Model {
         return rs;
     }
 
-    // greatest_amount_of_listeners_album: List of top 30 most listened albums; outputs albumname, artistname, number of listeners
+    // greatest_amount_of_listeners_album: List of top 15 most listened albums; outputs albumname, artistname, number of listeners
     public ResultSet greatest_amount_of_listeners_album()
     {
         ResultSet rs = null;
         try
         {
             rs = stmt.executeQuery( 
-                "SELECT albums.albumname as AlbumName, artists.artistname as ArtistName, COUNT(DISTINCT usersong.userid) as NumberofListeners FROM usersong, albums, artists, songs WHERE Songs.songid = usersong.songid and albums.albumid = songs.albumid and artists.artistid = albums.artistid GROUP BY AlbumName, ArtistName ORDER BY NumberofListeners desc LIMIT 30;");
+                "SELECT albums.albumname as AlbumName, artists.artistname as ArtistName, COUNT(DISTINCT usersong.userid) as NumberofListeners FROM usersong, albums, artists, songs WHERE Songs.songid = usersong.songid and albums.albumid = songs.albumid and artists.artistid = albums.artistid GROUP BY AlbumName, ArtistName ORDER BY NumberofListeners desc LIMIT 15;");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -270,14 +270,14 @@ public class Model {
         return rs;
     }
 
-    // greatest_amount_of_listeners_song: List of top 30 most listened songs; outputs songname, artistname, number of listeners
+    // greatest_amount_of_listeners_song: List of top 15 most listened songs; outputs songname, artistname, number of listeners
     public ResultSet greatest_amount_of_listeners_song()
     {
         ResultSet rs = null;
         try
         {
             rs = stmt.executeQuery( 
-                "SELECT songs.songname as SongName, artists.artistname as ArtistName, COUNT(DISTINCT usersong.userid) as NumberofListeners FROM usersong, songs, artists WHERE Songs.songid = usersong.songid and artists.artistid = songs.artistid GROUP BY SongName, ArtistName ORDER BY NumberofListeners desc LIMIT 30;");
+                "SELECT songs.songname as SongName, artists.artistname as ArtistName, COUNT(DISTINCT usersong.userid) as NumberofListeners FROM usersong, songs, artists WHERE Songs.songid = usersong.songid and artists.artistid = songs.artistid GROUP BY SongName, ArtistName ORDER BY NumberofListeners desc LIMIT 15;");
         }
         catch (Exception e) {
             e.printStackTrace();
