@@ -13,4 +13,4 @@ java -jar Marauders_MLA.jar
 
 1) OpenJDK 18: https://jdk.java.net/18/
 2) Install the PostGreSQL Driver: https://jdbc.postgresql.org/download.html
-3) Run the program
+3) Run the .jar
